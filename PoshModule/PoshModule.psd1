@@ -51,7 +51,13 @@ Description = 'A module for building modules, functions, and scripts.'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'PoshMarkdown'; GUID = '4a4b50c6-83c2-498a-815f-aa2847073b1d'; ModuleVersion = '1.0.0'; })
+RequiredModules = @(
+    @{
+        ModuleName    = 'PoshMarkdown'
+        RequiredVersion = '1.12.2'
+        Guid          = '4a4b50c6-83c2-498a-815f-aa2847073b1d'
+    }
+)
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -69,9 +75,9 @@ RequiredModules = @(@{ModuleName = 'PoshMarkdown'; GUID = '4a4b50c6-83c2-498a-81
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Convert-PSFunctionHelpToMarkdown',
-               'Convert-PSScriptHelpToMarkdown', 'New-PSFunctionScaffolding',
-               'New-PSModuleScaffolding', 'New-PSScriptInfo',
+FunctionsToExport = 'Convert-PSFunctionHelpToMarkdown', 
+               'Convert-PSScriptHelpToMarkdown', 'New-PSFunctionScaffolding', 
+               'New-PSModuleScaffolding', 'New-PSScriptInfo', 
                'New-PSScriptScaffolding'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
@@ -98,7 +104,7 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'scaffolding','module'
+        Tags = @('scaffolding','module')
 
         # A URL to the license for this module.
         LicenseUri = 'https://www.apache.org/licenses/LICENSE-2.0'
@@ -119,11 +125,11 @@ PrivateData = @{
         # RequireLicenseAcceptance = $false
 
         # External dependent modules of this module
-        # ExternalModuleDependencies = @()
+        ExternalModuleDependencies = 'PoshMarkdown'
 
     } # End of PSData hashtable
 
-} # End of PrivateData hashtable
+ } # End of PrivateData hashtable
 
 # HelpInfo URI of this module
 # HelpInfoURI = ''
@@ -132,4 +138,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
